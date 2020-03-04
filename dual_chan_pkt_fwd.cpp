@@ -759,10 +759,12 @@ int main()
   wiringPiSPISetup(SPI_CHANNEL_2, 500000);
 
   // Setup LORA
-  digitalWrite(RST, HIGH);
-  delay(100);
+  // Manual Reset for SX1276(pull low >100us, release, and wait 5ms)
   digitalWrite(RST, LOW);
-  delay(100);   
+  delay(1); // Wait for 100us
+  digitalWrite(RST, HIGH);
+  delay(5); // Wait for 5ms
+  
   SetupLoRa(0);
   SetupLoRa(1);
 

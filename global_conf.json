@@ -30,7 +30,7 @@
     "servers":
     [
       {
-        "address": "asia-se.thethings.network",
+        "address": "router.jp.thethings.network",
         "port": 1700,
         "enabled": true
       },
